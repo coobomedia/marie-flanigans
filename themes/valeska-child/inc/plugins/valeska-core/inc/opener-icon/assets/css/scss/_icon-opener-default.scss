@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Opener icon styles
+   ========================================================================== */
+
+.qodef-opener-icon {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+	
+	.qodef-m-icon {
+		position: relative;
+		visibility: visible;
+		
+		&.qodef--close {
+			position: absolute;
+			top: 0;
+			left: 0;
+			visibility: hidden;
+		}
+	}
+	
+	&.qodef-source--icon-pack {
+		font-size: 35px;
+		
+		* {
+			display: inline-block;
+			line-height: inherit;
+			
+			&:before {
+				display: inline-block;
+				line-height: inherit;
+			}
+		}
+
+		&.qodef--opened {
+
+			.qodef-m-icon {
+
+				&.qodef--open {
+					visibility: hidden;
+				}
+
+				&.qodef--close {
+					visibility: visible;
+				}
+			}
+		}
+	}
+	
+	&.qodef-source--svg-path {
+		
+		span {
+			position: relative;
+			
+			> * {
+				vertical-align: middle;
+			}
+			
+			> *,
+			path {
+				fill: currentColor;
+				stroke: currentColor;
+			}
+		}
+
+		&.qodef--opened {
+
+			.qodef-m-icon {
+
+				&.qodef--open {
+					visibility: hidden;
+				}
+
+				&.qodef--close {
+					visibility: visible;
+				}
+			}
+		}
+	}
+	
+	&.qodef-source--predefined {
+		color: $heading-color;
+		
+		.qodef-m-lines {
+			position: relative;
+			display: block;
+			width: 47px;
+			height: 17px;
+		}
+		
+		.qodef-m-line {
+			position: absolute;
+			left: 0;
+			height: 1px;
+			width: 100%;
+			background-color: currentColor;
+			transition: top .15s ease, transform .3s ease;
+			
+			&.qodef--1 {
+				top: 0;
+			}
+			
+			&.qodef--2 {
+				top: 8px;
+			}
+
+			&.qodef--3 {
+				bottom: 0;
+			}
+		}
+
+		&.qodef--opened {
+
+			.qodef-m-line {
+				width: 41px;
+
+				&.qodef--1 {
+					top: 50%;
+					transform: rotate(45deg);
+				}
+
+				&.qodef--2 {
+					opacity: 0;
+				}
+
+				&.qodef--3 {
+					top: 50%;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+
+		&:hover {
+			color: $heading-color;
+
+			.qodef--open {
+
+				.qodef-m-line {
+					animation: qodef-predefined-line-animation .92s forwards cubic-bezier(0.48, 0.03, 0.24, 0.92);
+
+					&.qodef--2 {
+						animation-delay: .16s;
+					}
+
+					&.qodef--3 {
+						animation-delay: .32s;
+					}
+				}
+			}
+		}
+	}
+}

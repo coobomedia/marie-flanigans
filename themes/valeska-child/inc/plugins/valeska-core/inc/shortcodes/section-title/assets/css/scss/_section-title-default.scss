@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Section Title shortcode styles
+   ========================================================================== */
+
+.qodef-section-title {
+	@include qodefRelativeLayout();
+	
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+	
+	&.qodef-alignment--left {
+		text-align: left;
+	}
+	
+	&.qodef-alignment--right {
+		text-align: right;
+	}
+	
+	.qodef-m-title {
+		margin: 0;
+	}
+	
+	.qodef-m-text {
+		margin: 13px 0 0;
+	}
+
+	.qodef-m-subtitle {
+		@include qodefInfoStyle();
+		margin: 0 0 28px;
+	}
+
+	.qodef-m-title-italic {
+		font-style: italic;
+		text-transform: none;
+	}
+
+	.qodef-m-button {
+		margin-top: 46px;
+	}
+
+	&.qodef-section-title-appear-animation--yes {
+
+		.qodef-m-subtitle,
+		.qodef-m-title,
+		.qodef-m-text,
+		.qodef-m-button {
+			opacity: 0;
+			transform: translateY(24px);
+			will-change: transform;
+			transition: transform .64s ease, opacity .48s cubic-bezier(.35, .18, .07, 1.04);
+		}
+
+		&.qodef-appeared,
+		.elementor-editor-active & {
+
+			.qodef-m-subtitle,
+			.qodef-m-title,
+			.qodef-m-text,
+			.qodef-m-button {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			> * {
+
+				@for $i from 1 through 4 {
+
+					&:nth-child(#{$i}) {
+						transition-delay: (#{$i * 180ms});
+					}
+				}
+			}
+		}
+	}
+}

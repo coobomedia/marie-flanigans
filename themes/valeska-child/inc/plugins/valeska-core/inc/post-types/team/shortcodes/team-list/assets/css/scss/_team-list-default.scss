@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Team lists shortcode styles
+   ========================================================================== */
+
+.qodef-team-list {
+
+	.qodef-e-image {
+		position: relative;
+	}
+
+	.qodef-e-role {
+		margin: 0;
+	}
+
+	.qodef-e-title {
+		margin: 2px 0 13px;
+	}
+
+	.qodef-team-member-social-icons {
+		margin: 0;
+
+		a {
+			position: relative;
+			display: inline-block;
+			font-family: $text-font;
+			font-size: 15px;
+			text-transform: uppercase;
+			font-weight: 400;
+			letter-spacing: 0.1em;
+			line-height: 30px;
+			margin-right: 16px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Product Category List Info on Image styles
+   ========================================================================== */
+
+.qodef-woo-product-category-list {
+
+    &.qodef-layout--info-on-image {
+
+        .qodef-e-inner {
+
+            &:hover {
+
+                .qodef-e-content {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .qodef-e-title,
+        .qodef-e-description {
+            color: #fff;
+        }
+    }
+
+    .count {
+        display: none;
+    }
+}

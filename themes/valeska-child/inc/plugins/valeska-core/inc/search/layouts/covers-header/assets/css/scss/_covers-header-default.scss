@@ -1,0 +1,129 @@
+/* ==========================================================================
+# Search covers header - start
+========================================================================== */
+
+@keyframes cover_search_fade_out {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+	100% {
+		transform: translateY(-100%);
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+@keyframes cover_search_fade_in {
+	0% {
+		transform: translateY(-100%);
+		opacity: 0;
+		visibility: hidden;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.qodef-search-cover-form {
+	@include qodefAbsoluteLayout();
+	transform: translateY(-100%);
+	opacity: 0;
+	visibility: hidden;
+	background-color: #fff;
+	z-index: 100;
+	box-shadow: 0 5px 19.32px 1.68px rgba(0, 0, 0, 0.04);
+	
+	.qodef-m-inner {
+		display: flex;
+		height: 100%;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 84px 0 74px;
+	}
+	
+	.qodef-m-form-field {
+		padding: 0;
+		margin-bottom: 0;
+		font-size: 17px;
+		color: $input-fields-color;
+		background-color: transparent;
+		border: 0;
+		border-radius: 0;
+		outline-offset: 0;
+		
+		&:focus {
+			color: $input-fields-color;
+		}
+		
+		@include qodefPlaceholder {
+			color: inherit;
+		}
+	}
+	
+	.qodef-m-close {
+		flex-shrink: 0;
+		
+		&.qodef-source--icon-pack {
+			font-size: 23px;
+		}
+
+		&.qodef-source--svg-path {
+
+			svg {
+				width: 30px;
+
+				g {
+
+					.st0 {
+						stroke-width: .5;
+					}
+				}
+			}
+		}
+
+		&:hover {
+
+			&.qodef-source--svg-path {
+				color: $heading-color;
+
+				svg {
+
+					g {
+
+						.st0 {
+							animation: qodef-predefined-line-animation .88s forwards cubic-bezier(0.48, 0.03, 0.24, 0.92);
+						}
+
+						&:nth-child(2) {
+
+							.st0 {
+								animation-delay: .16s;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-covers-search--fadeout & {
+		animation: cover_search_fade_out .3s ease both;
+	}
+	
+	.qodef-covers-search--fadein & {
+		animation: cover_search_fade_in .3s ease both;
+	}
+	
+	.qodef-header--sticky-display #qodef-page-header > & {
+		display: none;
+	}
+}
+
+/* ==========================================================================
+# Search covers header - end
+========================================================================== */

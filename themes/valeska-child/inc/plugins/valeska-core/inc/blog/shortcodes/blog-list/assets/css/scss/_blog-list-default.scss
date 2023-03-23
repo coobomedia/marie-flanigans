@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Blog List styles
+   ========================================================================== */
+
+.qodef-blog {
+
+    &.qodef-hover-animation--yes {
+
+        .qodef-blog-item {
+
+            &:not(.format-gallery) {
+
+                .qodef-e-media {
+
+                    a {
+                        overflow: hidden;
+                    }
+
+                    img {
+                        transform: scale(1.04);
+                        transition: transform .64s cubic-bezier(0.46, 0, 0.36, 0.99);
+                        will-change: transform;
+                    }
+                }
+
+                &.qodef--active {
+
+                    .qodef-e-media {
+
+                        img {
+                            transform: scale(1.01);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

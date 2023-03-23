@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Stacked Images style - begin
+   ========================================================================== */
+
+.qodef-stacked-images {
+	
+	.qodef-m-images {
+		position: relative;
+		display: inline-block;
+
+		.qodef-m-main-image {
+			overflow: hidden;
+		}
+
+		.qodef-m-image {
+			display: inline-block;
+
+			&:not(:first-child) {
+				position: absolute;
+
+				img {
+					display: inline-block;
+					max-width: initial;
+
+					@include qodefScreenSize1440 {
+						width: 70%;
+					}
+
+					@include qodefScreenSize1024 {
+						width: 55%;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Stacked Images style - end
+   ========================================================================== */

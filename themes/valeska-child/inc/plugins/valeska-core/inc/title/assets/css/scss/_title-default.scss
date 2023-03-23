@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Title styles
+   ========================================================================== */
+
+.qodef-page-title {
+	background-position: center 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	&.qodef-image--responsive {
+		height: auto !important; // because of inline style
+		
+		.qodef-m-content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			
+			&.qodef-content-grid {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+	
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+	
+	&.qodef-alignment--right {
+		text-align: right;
+	}
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	
+	.qodef-m-content {
+		
+		&.qodef-content-full-width {
+			padding: $full-width-side-padding;
+		}
+	}
+	
+	.qodef-breadcrumbs {
+		
+		a, span {
+			font-size: 17px;
+			color: #939393;
+		}
+
+		.qodef-breadcrumbs-separator {
+			margin: 0 5px;
+			
+			&:after {
+				content: '/';
+			}
+		}
+	}
+}

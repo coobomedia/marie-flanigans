@@ -1,0 +1,65 @@
+@import '../../../../../../../../../../themes/valeska/inc/woocommerce/assets/css/scss/woo-mixins';
+
+.yith-wcwl-form {
+
+    .wishlist-title-container {
+        display: none !important;
+    }
+
+    .shop_table {
+        @include qodefWooTableStyle();
+        font-size: 100%;
+    }
+
+    .wishlist_table {
+
+        // overrides
+        &.shop_table {
+
+            tr {
+
+                th {
+                    background: transparent !important;
+
+                    &.product-remove {
+                        width: auto !important;
+                    }
+                }
+
+                td {
+                    background: transparent !important;
+                    color: $text-color !important;
+                    border-color: transparent !important;
+                }
+            }
+        }
+
+        .product-add-to-cart {
+            min-width: 126px;
+
+            a,
+            .button,
+            .added_to_cart {
+                @include qodefButtonDefaultStyle();
+                @include qodefButtonTextualColor();
+                margin-bottom: 0 !important;
+
+                &:hover {
+                    @include qodefButtonTextualHoverColor();
+                }
+
+                i {
+                    display: none !important;
+                }
+
+                &.added {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
+
+.wishlist_table .product-stock-status span.wishlist-in-stock {
+    color: $text-color;
+}

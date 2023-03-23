@@ -1,0 +1,34 @@
+.qodef-order-tracking {
+
+	label {
+		@include qodefHeadingStyle(h5);
+		margin-bottom: 9px;
+		margin-top: 27px;
+	}
+
+	p:not(.form-row) {
+		margin-top: 0;
+		margin-bottom: 47px;
+	}
+
+	.form-row {
+		margin: 0;
+	}
+
+	button {
+		@include qodefButtonDefaultStyle();
+		@include qodefButtonSize();
+		@include qodefButtonOutlinedColor();
+		text-align: center;
+		letter-spacing: 0 !important;
+		margin-top: 38px;
+
+		&:after {
+			display: none;
+		}
+
+		&:hover {
+			@include qodefButtonOutlinedHoverColor();
+		}
+	}
+}

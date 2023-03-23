@@ -1,0 +1,32 @@
+#---------------------------
+# Themes
+#---------------------------
+# Ignore all themes
+/themes/*
+# Except this one theme
+!/themes/valeska-child
+
+#---------------------------
+# Plugins
+# Check out WPE's Smart
+# Plugin Manager (SMP)
+#---------------------------
+# Ignore all plugins
+/plugins/*
+
+
+#---------------------------
+# MU plugins: these are
+# managed by the platform.
+#---------------------------
+/mu-plugins/
+
+#---------------------------
+# Uploads directory
+#---------------------------
+/uploads/
+
+#---------------------------
+# Upgrade files
+#---------------------------
+/upgrade/

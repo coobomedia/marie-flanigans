@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Banner shortcode styles
+   ========================================================================== */
+
+.qodef-banner {
+	@include qodefRelativeLayout();
+	background-color: #f5f5f5;
+
+	.qodef-m-content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			display: block;
+			transition: all .35s ease-out;
+		}
+
+		&.qodef--background {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+			img {
+				visibility: hidden;
+			}
+		}
+	}
+
+	.qodef-m-content-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		max-width: 270px;
+	}
+
+	.qodef-m-subtitle {
+		@include qodefInfoStyle();
+		margin-bottom: 12px;
+	}
+
+	.qodef-m-title {
+		margin: 0 0 10px;
+	}
+
+	.qodef-m-text {
+		margin: 10px 0;
+	}
+
+	.qodef-m-button {
+		margin: 21px 0 0;
+
+		.qodef-m-text {
+			margin: 0;
+		}
+	}
+
+	&.qodef-hover-animation--yes {
+		overflow: hidden;
+
+		.qodef-m-image {
+			transform: scale(1.01);
+			transition: transform .64s cubic-bezier(0.46, 0, 0.36, 0.99);
+			will-change: transform;
+		}
+
+		&.qodef--active {
+
+			.qodef-m-image {
+				transform: scale(1.04);
+			}
+		}
+	}
+}

@@ -1,0 +1,220 @@
+/* ==========================================================================
+   Scattered Images With Title shortcode responsive style - begin
+   ========================================================================== */
+
+.qodef-scattered-images-with-title {
+
+    .qodef-m-image {
+
+        img {
+
+            @include qodefScreenSize1366 {
+                max-width: 65%;
+            }
+
+            @include qodefScreenSize680 {
+                max-width: 50%;
+            }
+        }
+    }
+
+    .qodef-m-layer {
+
+        &--bottom {
+
+            .qodef-m-image {
+
+                &:nth-child(1) {
+
+                    @include qodefScreenSize1024 {
+                        top: 6.5vmin;
+                        left: 1vmin;
+                    }
+
+                    @include qodefScreenSize680 {
+                        top: -0.5vmin;
+                        left: -21vmin;
+                    }
+                }
+
+                &:nth-child(2) {
+
+                    @include qodefScreenSize1024 {
+                        top: 14.4vmin;
+                        left: 39vmin;
+                    }
+
+                    @include qodefScreenSize768 {
+                        top: 51.4vmin;
+                        left: 54vmin;
+                    }
+
+                    @include qodefScreenSize680 {
+                        top: 84.4vmin;
+                        left: 62vmin;
+                    }
+                }
+
+                &:nth-child(3) {
+
+                    @include qodefScreenSize1024 {
+                        right: 3vmin;
+                    }
+
+                    @include qodefScreenSize680 {
+                        right: -15vmin;
+                    }
+                }
+
+                &:nth-child(4) {
+
+                    @include qodefScreenSize768 {
+                        left: 0.9vmin;
+                    }
+
+                    @include qodefScreenSize680 {
+                        left: -10.1vmin;
+                    }
+                }
+
+                &:nth-child(5) {
+
+                    @include qodefScreenSize1024 {
+                        right: 66.5vmin;
+                    }
+
+                    @include qodefScreenSize768 {
+                        right: 51.5vmin;
+                    }
+
+                    @include qodefScreenSize680 {
+                        bottom: 22.3vmin;
+                        right: 31.5vmin;
+                    }
+                }
+
+                &:nth-child(6) {
+
+                    @include qodefScreenSize768 {
+                        bottom: 5.6vmin;
+                        right: -0.7vmin;
+                    }
+
+                    @include qodefScreenSize768 {
+                        bottom: 2.6vmin;
+                        right: -10.7vmin;
+                    }
+                }
+            }
+        }
+
+        &--top {
+
+            .qodef-m-image {
+
+                &:nth-child(2) {
+
+                    @include qodefScreenSize1024 {
+                        top: 7.9vmin;
+                        left: 55.1vmin;
+                    }
+
+                    @include qodefScreenSize768 {
+                        top: 46.9vmin;
+                        left: 51.1vmin;
+                    }
+
+                    @include qodefScreenSize680 {
+                        top: 64.9vmin;
+                        left: 45.1vmin;
+                    }
+                }
+
+                &:nth-child(3) {
+
+                    @include qodefScreenSize1024 {
+                        right: 38.4vmin;
+                    }
+
+                    @include qodefScreenSize680 {
+                        top: 4.2vmin;
+                        right: 21.4vmin;
+                    }
+                }
+
+                &:nth-child(4) {
+
+                    @include qodefScreenSize1024 {
+                        top: 37.2vmin;
+                        right: 43.7vmin;
+                    }
+
+                    @include qodefScreenSize680 {
+                        right: 1.7vmin;
+                    }
+                }
+
+                &:nth-child(5) {
+
+                    @include qodefScreenSize1024 {
+                        bottom: 29.5vmin;
+                        left: 32.1vmin;
+                    }
+
+                    @include qodefScreenSize768 {
+                        bottom: 47.5vmin;
+                        left: 10.1vmin;
+                    }
+
+                    @include qodefScreenSize680 {
+                        bottom: 70.5vmin;
+                        left: -15.9vmin;
+                    }
+                }
+
+                &:nth-child(6) {
+
+                    @include qodefScreenSize1366 {
+                        right: 54.6vmin;
+                    }
+
+                    @include qodefScreenSize1024 {
+                        right: 40.6vmin;
+                    }
+
+                    @include qodefScreenSize768 {
+                        bottom: 19vmin;
+                        right: 28.6vmin;
+                    }
+
+                    @include qodefScreenSize680 {
+                        bottom: 40vmin;
+                        right: 15.6vmin;
+                    }
+                }
+
+                &:nth-child(7) {
+
+                    @include qodefScreenSize1024 {
+                        bottom: 7.5vmin;
+                        right: 20.5vmin;
+                    }
+
+                    @include qodefScreenSize768 {
+                        bottom: 11.5vmin;
+                        right: 14.5vmin;
+                    }
+
+                    @include qodefScreenSize680 {
+                        bottom: 7.5vmin;
+                        right: 6.5vmin;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Scattered Images With Title shortcode responsive style - end
+   ========================================================================== */

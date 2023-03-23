@@ -1,0 +1,26 @@
+.qodef-countdown.qodef-layout--simple {
+
+	.qodef-digit-wrapper {
+		display: inline-block;
+		vertical-align: top;
+		padding: 0 20px;
+	}
+
+	.qodef-digit{
+		font-family: $heading-font;
+		font-size: 66px;
+		line-height: 1em;
+		font-weight: 300;
+		color: $heading-color;
+
+	}
+	.qodef-label {
+		font-family: $text-font;
+		font-size: 15px;
+		text-transform: uppercase;
+		letter-spacing: 0.3em;
+		font-weight: 700;
+		color: $heading-color;
+		margin-top: 19px;
+	}
+}

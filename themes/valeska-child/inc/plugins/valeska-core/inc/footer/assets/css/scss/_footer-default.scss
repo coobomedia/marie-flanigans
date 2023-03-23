@@ -1,0 +1,76 @@
+/* ==========================================================================
+   #Footer styles - start
+   ========================================================================== */
+
+#qodef-page-footer {
+
+	.qodef-alignment--left {
+		text-align: left;
+
+		.widget {
+
+			img {
+				margin-right: auto;
+			}
+		}
+	}
+
+	.qodef-alignment--center {
+		text-align: center;
+
+		.widget {
+
+			img {
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+	}
+
+	.qodef-alignment--right {
+		text-align: right;
+
+		.widget {
+
+			img {
+				margin-left: auto;
+			}
+		}
+	}
+}
+
+#qodef-page-footer-bottom-area-inner {
+
+	.qodef-alignment--space-between {
+
+		.qodef-grid-item {
+
+			&:nth-child(2) {
+
+				@media (min-width: $screen-size-681) {
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+.qodef-page-footer--uncover {
+	
+	#qodef-page-outer {
+		z-index: 90; // needs to be larger than the footer and lower than the header
+	}
+	
+	#qodef-page-footer {
+		
+		.no-touchevents & {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
+
+/* ==========================================================================
+   #Footer styles - end
+   ========================================================================== */

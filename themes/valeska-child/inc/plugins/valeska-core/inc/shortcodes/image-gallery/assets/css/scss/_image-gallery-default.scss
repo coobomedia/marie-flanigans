@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Image Gallery shortcode style - begin
+   ========================================================================== */
+
+.qodef-image-gallery {
+
+    &.qodef-hover-animation--yes {
+
+        .qodef-image-wrapper {
+
+            a {
+                position: relative;
+                display: block;
+                overflow: hidden;
+
+                &:before {
+                    content: '';
+                    @include qodefAbsoluteLayout();
+                    background: rgba(#000, .6);
+                    opacity: 0;
+                    transition: opacity .33s ease;
+                    z-index: 1;
+                }
+            }
+
+            img {
+                transform: scale(1.04);
+                transition: transform .64s cubic-bezier(0.46, 0, 0.36, 0.99);
+                will-change: transform;
+            }
+
+            a {
+
+                &:hover {
+
+                    &:before {
+                        opacity: 1;
+                    }
+
+                    img {
+                        transform: scale(1.01);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Image Galery shortcode style - end
+   ========================================================================== */

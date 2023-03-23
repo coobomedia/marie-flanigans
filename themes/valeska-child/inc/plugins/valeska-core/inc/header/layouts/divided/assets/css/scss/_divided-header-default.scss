@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Header layout styles
+   ========================================================================== */
+
+$left-right-spacing: 10px; // Same size needs to be as in valeska-core/inc/header/assets/css/scss/_common-default.scss
+
+.qodef-header--divided {
+
+	#qodef-page-header {
+
+		.qodef-divided-header-left-wrapper,
+		.qodef-divided-header-right-wrapper {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+		}
+
+		.qodef-divided-header-left-wrapper {
+
+			.qodef-header-navigation {
+				margin-left: 0;
+			}
+		}
+
+		.qodef-divided-header-right-wrapper {
+			justify-content: flex-end;
+
+			.qodef-header-navigation {
+				margin-right: 0;
+			}
+		}
+		
+		.qodef-header-logo-link {
+			justify-content: center;
+		}
+		
+		.qodef-header-navigation {
+			margin: 0 $left-right-spacing * 2;
+		}
+		
+		.qodef-widget-holder {
+			//margin-left: 20px;
+		}
+	}
+
+	#qodef-page-header-inner {
+		align-items: center;
+		justify-content: center;
+	}
+}

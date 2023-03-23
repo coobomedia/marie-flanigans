@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Portfolio Category List shortcode style - begin
+   ========================================================================== */
+
+.qodef-woo-product-category-list {
+
+	&.qodef-hover-animation--yes {
+
+		.qodef-e-inner {
+
+			.qodef-woo-product-category-image {
+				overflow: hidden;
+
+				img {
+					transform: scale(1.04);
+					transition: transform .64s cubic-bezier(0.46, 0, 0.36, 0.99);
+					will-change: transform;
+				}
+			}
+
+			&:hover {
+
+				.qodef-woo-product-category-image {
+
+					img {
+						transform: scale(1.01);
+					}
+				}
+			}
+		}
+	}
+
+	.qodef-e-inner {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 100%;
+
+		.touchevents & {
+			cursor: pointer;
+		}
+
+		&:hover {
+
+			.qodef-woo-product-category-image-inner {
+				opacity: 1;
+
+				> * {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+
+	.qodef-woo-product-category-image {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 100%;
+		overflow: hidden;
+
+		img {
+			display: block;
+			width: 100%;
+		}
+
+		> .qodef-e-link {
+			@include qodefAbsoluteLayout();
+		}
+	}
+
+	.qodef-woo-product-category-image-inner {
+		@include qodefAbsoluteLayout();
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 40px;
+		text-align: center;
+		background-color: rgba($heading-color, .24);
+		opacity: 0;
+		transition: .33s ease;
+
+		> * {
+			opacity: 0;
+			transform: translateY(12px);
+			will-change: transform;
+			transition: transform .64s ease, opacity .48s cubic-bezier(.35, .18, .07, 1.04);
+		}
+
+		a {
+			position: relative;
+			z-index: 3;
+		}
+	}
+
+	.qodef-e-content {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+		margin: 29px auto 3px;
+	}
+
+	.qodef-e-title {
+		margin: 0;
+	}
+
+	.qodef-woo-product-category-price-holder {
+		margin-top: 13px;
+		font-size: 17px;
+
+		.qodef-price-with-currency {
+			margin-left: 5px;
+			display: flex;
+		}
+	}
+}
+
+.widget_valeska_core_product_category_list {
+
+	.qodef-woo-product-category-list {
+
+		.qodef-e-content {
+			align-items: center;
+		}
+	}
+}

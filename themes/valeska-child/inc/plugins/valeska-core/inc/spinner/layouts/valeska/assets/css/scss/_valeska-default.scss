@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+
+    &.qodef-layout--valeska {
+
+        .qodef-m-inner {
+            background-color: #ddd9ca;
+        }
+
+        .qodef-m-valeska {
+            position: relative;
+            display: flex;
+            font-family: $heading-font;
+            font-size: 90px;
+            line-height: 1em;
+            font-weight: 300;
+            color: $heading-color;
+            opacity: 0;
+            transition: opacity .33s ease;
+        }
+
+        .qodef-m-number {
+
+        }
+
+        .qodef-m-percent {
+
+        }
+
+        &.qodef--init {
+
+            .qodef-m-valeska {
+                opacity: 1;
+            }
+        }
+    }
+}

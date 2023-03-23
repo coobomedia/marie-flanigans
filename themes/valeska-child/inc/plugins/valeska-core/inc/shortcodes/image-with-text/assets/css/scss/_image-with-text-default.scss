@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Image With Text shortcode styles
+   ========================================================================== */
+
+.qodef-image-with-text {
+	@include qodefRelativeLayout();
+
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+
+		a, img {
+			display: block;
+		}
+
+		a {
+			position: relative;
+			overflow: hidden;
+
+			img {
+				will-change: transform;
+				transition: transform .45s ease-out;
+
+			}
+
+			&:hover {
+				img {
+					transform: scale(1.02);
+				}
+			}
+		}
+	}
+
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+		text-align: center
+	}
+
+	.qodef-m-title {
+		margin: 34px 0 0;
+
+		a:hover {
+			color: $heading-color;
+		}
+	}
+
+	.qodef-m-content > .qodef-m-text {
+		margin: 14px 0 0;
+	}
+
+	.qodef-m-button {
+		margin-top: 27px;
+	}
+
+	&.qodef--has-shadow {
+
+		.qodef-m-image {
+			box-shadow: 12px 21px 24.57px 2.43px rgba(0, 0, 0, 0.06);
+		}
+	}
+
+	&.qodef-image-action--scrolling-image {
+
+		.qodef-m-image-holder {
+			position: relative;
+			overflow: hidden;
+
+			.qodef-m-image-holder-inner {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+
+				a {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					z-index: 100;
+				}
+			}
+
+			.qodef-m-frame {
+				vertical-align: middle;
+			}
+		}
+
+		&.qodef-scrolling-direction--vertical {
+
+			.qodef-m-image img {
+				width: 100%;
+			}
+		}
+
+		&.qodef-scrolling-direction--horizontal {
+
+			.qodef-m-image img {
+				max-width: unset;
+				height: 100%;
+				width: auto;
+			}
+		}
+	}
+
+	&.qodef-iwt-appear-animation--yes {
+
+		.qodef-m-image {
+			clip-path: inset(0 0 100% 0);
+			-webkit-clip-path: inset(0 0 100% 0);
+			transform: translateY(-24px);
+			will-change: transform;
+			transition: transform .72s cubic-bezier(.35, .18, .07, 1.04) .72s, clip-path .72s cubic-bezier(.35, .18, .07, 1.04) .72s;
+		}
+
+		.qodef-m-content {
+			opacity: 0;
+			transform: translateY(24px);
+			will-change: transform;
+			transition: transform .64s cubic-bezier(.35, .18, .07, 1.04) 1.16s, opacity .64s cubic-bezier(.35, .18, .07, 1.04) 1.16s;
+		}
+
+		&.qodef-appeared,
+		.elementor-editor-active & {
+
+			.qodef-m-image {
+				clip-path: inset(-100% -100% -10% -100%);
+				-webkit-clip-path: inset(-100% -100% -10% -100%);
+				transform: translateY(0);
+			}
+
+			.qodef-m-content {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+}

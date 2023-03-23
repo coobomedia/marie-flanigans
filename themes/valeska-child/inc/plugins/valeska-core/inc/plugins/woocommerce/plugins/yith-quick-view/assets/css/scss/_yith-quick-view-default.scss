@@ -1,0 +1,128 @@
+#yith-quick-view-modal {
+
+	.yith-quick-view-overlay {
+		background: rgba(#fff, .79) !important;
+	}
+
+	.yith-wcqv-wrapper {
+		height: auto !important;
+		width: 960px !important;
+		max-width: 90vw !important;
+	}
+
+	.yith-wcqv-main {
+		box-shadow: $box-shadow !important;
+		overflow-y: hidden !important;
+		max-height: 95vh !important;
+	}
+
+	#yith-quick-view-content {
+
+		.woocommerce-product-rating {
+			display: none;
+		}
+
+		.woocommerce-product-details__short-description {
+			margin-top: -9px !important;
+		}
+
+		>.product {
+
+			>.product {
+				position: relative;
+				display: flex;
+
+				> div {
+					width: 50% !important;
+
+					figure {
+						height: 100%;
+
+						> div {
+							height: 100%;
+						}
+					}
+				}
+
+				.qodef-woo-product-mark {
+					right: 50% !important;
+				}
+
+				.woocommerce-product-gallery__image {
+
+					a {
+
+						img {
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+				}
+
+				.entry-summary {
+					padding: 30px !important;
+					align-self: center;
+
+					.summary-content {
+						width: 100%;
+
+						> .product_title{
+							order: -2;
+							@include qodefHeadingStyle(h3);
+							max-width: 350px;
+							margin: 0;
+						}
+
+						> .price {
+							order: -1;
+						}
+					}
+
+					.reset_variations {
+						right: 0 !important;
+						left: auto !important;
+						bottom: -35px !important;
+					}
+				}
+
+				.product_meta {
+					display: none !important;
+				}
+			}
+		}
+	}
+
+	#yith-quick-view-close {
+		font-size: 0;
+		line-height: 1;
+		position: absolute;
+		top: 23px;
+		right: 16px;
+		z-index: 2;
+		height: 15px;
+		width: 15px;
+		@include qodefIconType('remove');
+		border: 0 !important;
+		opacity: 1 !important;
+
+		&:before,
+		&:after {
+			background-color: $heading-color !important;
+			transition: all .2s ease-out;
+		}
+
+		&:hover {
+
+			&:before,
+			&:after {
+				background-color: var(--qode-main-color) !important;
+			}
+		}
+	}
+
+	.woocommerce-wcqw-product__link {
+		margin-top: 38px;
+		margin-bottom: 27px;
+		margin-right: auto;
+	}
+}

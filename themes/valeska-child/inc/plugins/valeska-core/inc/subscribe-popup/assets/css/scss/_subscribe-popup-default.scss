@@ -1,0 +1,212 @@
+/* ==========================================================================
+# Subscribe Popup default style
+========================================================================== */
+
+.qodef-sp-holder {
+	position: fixed;
+	bottom: 5%;
+	right: 5%;
+	max-width: calc(100% - 10%);
+	opacity: 0;
+	visibility: hidden;
+	z-index: 10;
+	transform: translateY(24px);
+	transition: transform .52s cubic-bezier(.35, .18, .07, 1.04), opacity .52s cubic-bezier(.35, .18, .07, 1.04), visibility .52s cubic-bezier(.35, .18, .07, 1.04);
+	background-color: rgba(#fff, 0.9);
+	display: flex;
+
+	.qodef-subscribe-popup--disabled & {
+		opacity: 0 !important;
+	}
+
+	@include qodefScreenSize680 {
+		bottom: 0;
+		right: 0;
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.qodef-sp-inner {
+		display: flex;
+		align-items: stretch;
+		width: 100%;
+		max-width: 415px;
+		background-color: #e9e7db;
+	}
+
+	.qodef-sp-close {
+		position: absolute;
+		top: 11px;
+		right: 11px;
+		display: block;
+		color: #000000;
+		z-index: 10;
+
+		&:hover {
+			color: $text-color;
+		}
+
+		svg {
+			stroke: currentColor;
+			fill: currentColor;
+		}
+	}
+
+	.qodef-sp-content-container {
+		position: relative;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		text-align: left;
+		background-size: cover;
+		padding: 22px 25px;
+
+		@include qodefScreenSize768 {
+			padding: 25px 5%;
+		}
+
+		.qodef-horizontal-form {
+			width: 100%;
+		}
+	}
+
+	.qodef-sp-content-inner {
+		align-self: center;
+		padding: 0;
+
+		@include qodefScreenSize680 {
+			padding-top: 0;
+		}
+	}
+
+	.qodef-sp-image {
+		flex-shrink: 0;
+
+		@include qodefScreenSize680 {
+			display: none;
+		}
+	}
+
+	.qodef-sp-title {
+		margin: 0 0 9px;
+		max-width: 210px;
+		line-height: 24px;
+	}
+
+	.qodef-sp-subtitle {
+		color: $text-color;
+		margin: 0 0 26px;
+	}
+
+	.wpcf7 {
+		display: block;
+		width: 100%;
+	}
+
+	.qodef-sp-prevent {
+		margin-top: 16px;
+		margin-bottom: -8px;
+		width: 100%;
+	}
+
+	.qodef-sp-prevent-inner {
+		cursor: pointer;
+		display: inline-block;
+		line-height: 1;
+
+		> * {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			line-height: 1;
+		}
+	}
+
+	.qodef-sp-prevent-input {
+		margin: 0 1px 0 0;
+		width: 13px;
+		height: 13px;
+		border-radius: 20%;
+		overflow: hidden;
+		background-color: transparent;
+		border: 1px solid $text-color;
+
+		svg {
+			@include qodefAbsoluteLayout();
+			opacity: 0;
+			transition: $opacity-transition;
+		}
+
+		&.qodef-sp-prevent-clicked {
+			svg {
+				opacity: 1;
+			}
+		}
+	}
+
+	.qodef-sp-prevent-label {
+		font-size: 14px;
+		margin: 0;
+	}
+
+	.qodef-horizontal-form {
+		display: flex;
+		position: relative;
+
+
+		input[type=email] {
+			border-color: #9c9b93;
+			border-top: 0;
+			border-left: 0;
+			border-right: 0;
+			padding: 3px 1px;
+			margin: 0;
+		}
+
+		.qodef-button {
+			position: relative;
+			margin-left: 10px;
+			height: 100%;
+			margin-top: 6px;
+
+			&.qodef-layout--textual {
+
+				.qodef-m-text {
+					line-height: 25px;
+				}
+				&:before {
+					width: 100% !important;
+				}
+
+				&:hover {
+					background-color: transparent;
+					color: currentColor;
+
+					&:before {
+						width: 0 !important;
+					}
+				}
+			}
+
+
+		}
+
+		.ajax-loader {
+			position: absolute;
+			right: 0;
+			top: -24px;
+		}
+	}
+}
+
+/* Popup open/close style */
+
+.qodef-sp-opened {
+
+	.qodef-sp-holder {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+}

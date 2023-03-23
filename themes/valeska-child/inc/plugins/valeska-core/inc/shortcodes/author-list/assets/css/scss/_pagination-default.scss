@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Pagination global styles
+   ========================================================================== */
+
+.qodef-author-pagination--on {
+    
+    .qodef-m-pagination-spinner {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 32px;
+        height: auto;
+        fill: var(--qode-main-color);
+        stroke: none;
+        visibility: hidden;
+        z-index: -1;
+        animation: qode-rotate 2s infinite linear;
+    }
+
+    &.qodef-pagination-type--standard {
+
+        .qodef-grid-inner {
+            opacity: 1;
+            transition: $opacity-transition;
+        }
+
+        &.qodef--loading {
+
+            .qodef-grid-inner {
+                opacity: 0;
+            }
+        }
+    }
+
+    &.qodef-pagination-type--load-more {
+
+        .qodef-m-pagination-spinner {
+            position: absolute;
+            bottom: 10px;
+            left: calc(50% - 16px);
+        }
+
+        &.qodef--loading {
+
+            .qodef-m-pagination-spinner {
+                visibility: visible;
+                z-index: 1;
+            }
+
+            .qodef-load-more-button {
+                opacity: 0;
+            }
+        }
+    }
+
+    &.qodef-pagination-type--infinite-scroll {
+
+        &.qodef--loading {
+
+            .qodef-m-pagination-spinner {
+                visibility: visible;
+                z-index: 1;
+            }
+        }
+    }
+}

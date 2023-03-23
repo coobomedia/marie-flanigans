@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Custom Font shortcode styles
+   ========================================================================== */
+
+.widget {
+
+	&.widget_valeska_core_custom_font {
+		margin-bottom: 0 !important;
+	}
+}
+
+.qodef-custom-font {
+	position: relative;
+	margin: 0;
+
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+
+	&.qodef-alignment--left {
+		text-align: left;
+	}
+
+	&.qodef-alignment--right {
+		text-align: right;
+	}
+
+	.qodef-m-tagline {
+		display: block;
+		margin-bottom: 22px;
+		font-family: $text-font;
+		font-size: 15px;
+		line-height: 1.06em;
+		font-weight: 700;
+		letter-spacing: .33em;
+	}
+
+	.qodef-m-title-part {
+		display: inline-block;
+	}
+
+	&.qodef-custom-font-appear-animation--yes {
+
+		.qodef-m-tagline,
+		.qodef-m-title-part {
+			opacity: 0;
+			transform: translateY(32px);
+			transition: transform .72s ease, opacity .72s ease;
+			will-change: transform;
+		}
+
+		.qodef-m-title-part {
+
+			&.qodef-appeared,
+			.elementor-editor-active & {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		&.qodef-appeared,
+		.elementor-editor-active & {
+
+			.qodef-m-tagline {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+}

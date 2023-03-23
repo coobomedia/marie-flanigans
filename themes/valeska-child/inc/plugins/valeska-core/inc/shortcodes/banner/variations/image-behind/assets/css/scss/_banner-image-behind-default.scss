@@ -1,0 +1,14 @@
+.qodef-banner {
+	
+	&.qodef-layout--image-behind {
+
+		.qodef-m-image {
+			min-height: 300px;
+		}
+
+		.qodef-m-content {
+			@include qodefAbsoluteLayout();
+			padding: 6% 3%;
+		}
+	}
+}

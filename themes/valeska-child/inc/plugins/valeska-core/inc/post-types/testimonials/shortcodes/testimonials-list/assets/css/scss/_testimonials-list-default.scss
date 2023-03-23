@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Testimonials list shortcode styles
+   ========================================================================== */
+
+.qodef-testimonials-list {
+	text-align: center;
+	position: relative;
+
+	&.qodef-swiper-container {
+
+		&.qodef-col-num--1 {
+			display: block;
+			margin: 0 auto;
+			max-width: 90%;
+		}
+	}
+
+	.qodef-e-inner {
+		padding-bottom: 40px;
+		margin: 0 20%;
+		position: relative;
+
+		@include qodefScreenSize1024 {
+			margin: 0 11%;
+		}
+		@include qodefScreenSize480 {
+			margin: 0 7%;
+		}
+	}
+
+	.qodef-e-content {
+		z-index: 100;
+	}
+
+	.qodef-e-media-image {
+		line-height: 0;
+		margin-bottom: 25px;
+	}
+
+	.qodef-m-image {
+		@include qodefAbsoluteLayout();
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		left: 0;
+		right: 0;
+		top: -2%;
+		z-index: -1;
+		margin: auto;
+
+		img {
+			display: block;
+			transition: all .35s ease-out;
+		}
+
+		&.qodef--background {
+			background-position: center;
+			background-repeat: no-repeat;
+
+			img {
+				visibility: hidden;
+			}
+		}
+	}
+
+	.qodef-e-static-title {
+		@include qodefInfoStyle();
+		margin-bottom: 30px;
+	}
+
+	.qodef-e-title {
+		margin: 0 0 25px;
+	}
+
+	.qodef-e-text {
+		margin: 0 0 25px;
+		font-weight: 300;
+
+		@include qodefScreenSize480 {
+			font-size: 28px;
+		}
+	}
+
+	.qodef-e-author {
+		margin: 30px 0 0;
+		color: #4d4d4d;
+
+		.qodef-e-author-name {
+			position: relative;
+
+			&:after {
+				content: ',';
+				position: absolute;
+				right: -3px;
+				bottom: 0;
+			}
+		}
+
+		.qodef-e-author-job {
+			margin-left: 3px;
+		}
+	}
+
+	.swiper-pagination-bullets {
+		text-align: left;
+		bottom: 0 !important;
+
+		.swiper-pagination-bullet {
+			&:before {
+				background-color: var(--qode-main-color);
+			}
+		}
+	}
+
+
+	&.qodef-skin--light {
+		.qodef-e-title,
+		.qodef-e-text,
+		.qodef-e-author {
+			color: #fff;
+		}
+
+		.swiper-pagination-bullet {
+			&:before {
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+.elementor-widget-valeska_core_testimonials_list {
+	.swiper-button-prev {
+
+
+		&.swiper-button-outside {
+			left: 0 !important;
+
+			svg {
+				@include qodefScreenSize480 {
+					width: 17px;
+				}
+			}
+		}
+	}
+
+	.swiper-button-next {
+		&.swiper-button-outside {
+			right: 0 !important;
+
+			svg {
+				@include qodefScreenSize480 {
+					width: 17px;
+				}
+			}
+		}
+	}
+}

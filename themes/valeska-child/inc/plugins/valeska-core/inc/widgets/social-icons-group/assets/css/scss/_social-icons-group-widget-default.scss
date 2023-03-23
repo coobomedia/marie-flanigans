@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Social Icons Group widget static style start
+   ========================================================================== */
+
+.qodef-social-icons-group {
+
+	.qodef-icon-holder {
+		margin-right: 9px;
+
+		a {
+			transition: $color-transition;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.qodef--textual {
+			@include qodefInfoStyle();
+
+			a {
+				color: inherit;
+			}
+		}
+	}
+
+	.qodef-social-icons-item {
+
+		&.qodef-layout--horizontal {
+			margin-right: 13px;
+			display: inline-block;
+
+			@include qodefScreenSize480 {
+				margin-right: 6px;
+			}
+		}
+
+		&.qodef-layout--vertical {
+			margin-right: 0;
+			display: block;
+			line-height: 1.22em;
+			margin-bottom: 6px;
+		}
+
+		a {
+			display: inline-block;
+			position: relative;
+			font-family: $text-font;
+			font-size: 15px;
+			font-weight: 400;
+			line-height: 1.22em;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			vertical-align: middle;
+			flex-wrap: wrap;
+
+			.qodef-skin--light & {
+				color: #fff;
+			}
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Social Icons Group widget variable style start
+   ========================================================================== */
+
+$local-widgets-area-map: (
+		'':(
+				link-color: null,
+				link-hover-color: null,
+				textual-link-color: null,
+				textual-link-hover-color: null,
+				icon-background-color: $additional-background-color,
+				icon-background-hover-color: $heading-color,
+				icon-with-background-link-hover-color: #fff,
+		),
+);
+
+@each $key, $values in $local-widgets-area-map {
+	#{$key} .widget {
+		&.widget_valeska_core_social_icons_group {
+
+			.qodef-icon-holder {
+
+				a {
+					@if (map-get($local-widgets-area-map, 'link-color') != null) {
+						color: map-get($local-widgets-area-map, 'link-color');
+					}
+
+					&:hover {
+						@if (map-get($local-widgets-area-map, 'link-hover-color') != null) {
+							color: map-get($local-widgets-area-map, 'link-hover-color');
+						}
+					}
+
+					&.qodef--textual {
+						@if (map-get($local-widgets-area-map, 'textual-link-color') != null) {
+							color: map-get($local-widgets-area-map, 'textual-link-color');
+						}
+
+						a {
+
+							&:hover {
+								@if (map-get($local-widgets-area-map, 'textual-link-hover-color') != null) {
+									color: map-get($local-widgets-area-map, 'textual-link-hover-color');
+								}
+							}
+						}
+					}
+				}
+
+				&.qodef-layout--circle,
+				&.qodef-layout--square {
+					@if (map-get($local-widgets-area-map, 'icon-background-color') != null) {
+						background-color: map-get($local-widgets-area-map, 'icon-background-color');
+					}
+
+					&:hover {
+						@if (map-get($local-widgets-area-map, 'icon-background-hover-color') != null) {
+							color: map-get($local-widgets-area-map, 'icon-background-hover-color');
+						}
+
+						a {
+
+							@if (map-get($local-widgets-area-map, 'icon-with-background-link-hover-color') != null) {
+								color: map-get($local-widgets-area-map, 'icon-with-background-link-hover-color');
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,346 @@
+/* ==========================================================================
+   WooCommerce DropDown Cart static style start
+   ========================================================================== */
+
+.widget_valeska_core_woo_dropdown_cart,
+.widget_valeska_core_woo_side_area_cart {
+	height: 100%;
+}
+
+.qodef-woo-dropdown-cart {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	height: 100%;
+
+	.qodef-m-inner {
+		@include qodefRelativeLayout();
+		height: 100%;
+	}
+
+	.qodef-m-opener {
+		position: relative;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		@include qodefMenuLevelOneInitialStyle();
+
+		.qodef-m-opener-count {
+			position: absolute;
+			right: -9px;
+			top: 50%;
+			height: 16px;
+			width: 16px;
+			border-radius: 50%;
+			background-color: $heading-color;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 11px;
+			letter-spacing: 0;
+			transform: translateY(calc(-50% - 5px));
+		}
+	}
+
+	.qodef-m-dropdown {
+		position: absolute;
+		top: 100%;
+		left: auto;
+		right: 0;
+		display: none;
+		opacity: 0;
+		visibility: hidden;
+		text-align: left;
+		transition: $opacity-transition, visibility $transition-timing;
+	}
+
+	.qodef-m-dropdown-inner {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 300px;
+		padding: 30px 20px;
+		background-color: #fff;
+		box-shadow: $box-shadow;
+	}
+
+	.qodef-m-order-details {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 42px;
+
+		> * {
+			margin: 0;
+		}
+
+		.qodef-m-order-amount {
+			//color: #c2c2c2;
+		}
+
+		.qodef-m-order-label {
+			//color: #fff;
+		}
+	}
+
+	.qodef-m-action {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 10px 0 -10px;
+
+        &-link {
+            @include qodefButtonDefaultStyle();
+            @include qodefButtonSize(small);
+            @include qodefButtonOutlinedColor();
+            width: 100%;
+            margin-bottom: 10px;
+
+            &:hover {
+                @include qodefButtonOutlinedHoverColor();
+            }
+        }
+	}
+
+	.qodef-woo-dropdown {
+
+		&-items {
+			@include qodefRelativeLayout();
+
+			&.qodef--scrollable {
+				padding-right: 6px;
+				overflow-y: scroll;
+
+				/* width */
+				&::-webkit-scrollbar {
+					width: 4px;
+				}
+
+				/* Track */
+				&::-webkit-scrollbar-track {
+					background: #f1f1f1;
+				}
+
+				/* Handle */
+				&::-webkit-scrollbar-thumb {
+					background: rgba($heading-color, .5);
+				}
+
+				/* Handle on hover */
+				&::-webkit-scrollbar-thumb:hover {
+					background: rgba($heading-color, .6);
+				}
+			}
+		}
+
+		&-item {
+			position: relative;
+			display: flex;
+
+			&:first-child {
+				margin-top: 0 !important;
+			}
+		}
+	}
+
+	.qodef-e {
+
+		&-image {
+			flex-shrink: 0;
+			margin-right: 15px;
+
+			a, img {
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+		}
+
+		&-content {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding-right: 30px;
+			margin: 13px 0;
+
+			> * {
+				margin: 7px 0;
+			}
+		}
+
+		&-price {
+			font-size: 19px;
+			color: #4d4d4d;
+		}
+
+		&-quantity {
+
+		}
+
+		&-remove {
+			font-size: 0;
+			line-height: 1;
+			position: absolute;
+			top: 6px;
+			right: -1px;
+			z-index: 2;
+			height: 15px;
+			width: 15px;
+			margin: 0 !important;
+			@include qodefIconType('remove');
+		}
+	}
+
+	.touchevents & {
+		cursor: pointer;
+	}
+
+	&:hover {
+
+		.qodef-m-dropdown {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+/* ==========================================================================
+   WooCommerce DropDown Cart variable style start
+   ========================================================================== */
+
+.qodef-woo-dropdown-cart {
+
+	.qodef-woo-dropdown-items {
+
+		.qodef-woo-dropdown-item {
+			margin-top: 20px;
+		}
+
+		img {
+			max-width: 54px;
+		}
+
+		a {
+			//color: #fff;
+			//
+			//&:hover {
+			//	color: var(--qode-main-color);
+			//}
+		}
+	}
+}
+
+#qodef-page-header {
+
+	.widget_shopping_cart {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		position: relative;
+
+		&:hover {
+
+			.widgettitle {
+				color: var(--qode-main-color);
+			}
+		}
+
+		.widgettitle {
+			@include qodefMenuLevelOneInitialStyle();
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			margin: 0;
+			transition: $color-transition;
+		}
+
+		.widget_shopping_cart_content {
+			position: absolute;
+			background-color: #fff;
+			padding: 30px 20px;
+			right: 0;
+			width: 300px;
+			top: 100%;
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity .2s ease-out;
+			box-shadow: $box-shadow;
+
+			img {
+				max-width: 54px;
+				margin-right: 15px;
+			}
+
+			ul {
+
+				li {
+
+					a:not(.remove) {
+						@include qodefHeadingStyle(h6);
+						display: flex;
+						align-items: flex-start;
+					}
+
+					.quantity {
+						font-size: 14px;
+						color: $heading-color;
+						margin: 4px 0 10px;
+					}
+				}
+			}
+
+			a,
+			p,
+			.amount {
+
+			}
+
+			.total {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				strong {
+					@include qodefHeadingStyle(h6);
+
+				}
+			}
+
+			.buttons {
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				margin: 10px 0 -10px;
+
+				> .button {
+					@include qodefButtonDefaultStyle();
+					@include qodefButtonSize(small);
+					@include qodefButtonOutlinedColor();
+					width: 100%;
+					margin-bottom: 10px;
+
+					&:after {
+						display: none;
+					}
+
+					&:hover {
+						@include qodefButtonOutlinedHoverColor();
+					}
+				}
+			}
+		}
+
+		&:hover {
+
+			.widget_shopping_cart_content {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+}

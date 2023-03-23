@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Vertical Sliding layout styles
+   ========================================================================== */
+
+$vertical-sliding-header-width--open: 325px;
+$vertical-sliding-header-width--initial: 97px;
+
+$vertical-sliding-content-grid-width-responsive-map: (
+        1400 : (
+                responsive-break: (
+                        $screen-size-1367: $screen-size-1680,
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-1100,
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        ),
+        1300 : (
+                responsive-break: (
+                        $screen-size-1367: $screen-size-1680,
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-1100,
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        ),
+        1200 : (
+                responsive-break: (
+                        $screen-size-1367: $screen-size-1440,
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-1100,
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        ),
+        1100 : (
+                responsive-break: (
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        )
+);
+
+.qodef-header--vertical-sliding {
+    .qodef-content-grid {
+        @each $key, $values in $vertical-sliding-content-grid-width-responsive-map {
+            $index: 1;
+
+            @each $responsive-key, $responsive-value in map-deep-get($vertical-sliding-content-grid-width-responsive-map, $key, 'responsive-break') {
+                @media only screen and (min-width: $responsive-key) and (max-width: $responsive-value) {
+                    @at-root .qodef-content-grid-#{$key}#{&} {
+                        width: #{nth(map-deep-get($vertical-sliding-content-grid-width-responsive-map, $key, 'content-grid-width'), $index)}
+                    }
+                }
+
+                $index: $index + 1;
+            }
+        }
+    }
+
+    #qodef-page-header {
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: $vertical-sliding-header-width--initial;
+        background-color: $heading-color;
+        visibility: visible;
+    
+        .qodef-header-logo-link {
+        
+            img {
+                max-width: unset;
+            }
+        }
+        
+        .qodef-widget-holder {
+            height: auto;
+        }
+    }
+
+    #qodef-page-header-inner {
+        padding: 40px 25px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .qodef-opener-icon {
+
+        @media screen and (min-width: 1025px) {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-12px);
+            color: #fff !important;
+            margin: 0;
+        }
+
+        &:hover {
+            color: #fff;
+        }
+
+        &.qodef--opened {
+
+            .qodef-m-line {
+                left: 8px;
+            }
+        }
+    }
+
+    #qodef-page-header.qodef-vertical-sliding-menu--opened {
+
+    }
+
+    &.admin-bar {
+        #qodef-page-header {
+            height: calc(100% - 32px);
+            top: 32px;
+        }
+    }
+
+    #qodef-page-outer,
+    #qodef-page-footer {
+        padding-left: $vertical-sliding-header-width--initial;
+    }
+}

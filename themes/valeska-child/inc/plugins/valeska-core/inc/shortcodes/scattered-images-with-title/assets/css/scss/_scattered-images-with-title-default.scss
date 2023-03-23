@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Scattered Images With Title shortcode style - begin
+   ========================================================================== */
+
+.qodef-scattered-images-with-title {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    overflow: hidden;
+/*    box-shadow: 9px 7px 10.57px 2.43px rgba(0, 0, 0, .02);*/
+    transition: height 1s .12s;
+
+    &.qodef-animation-done {
+        height: 0vh;
+    }
+
+    .qodef-m-layer-holder {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .qodef-m-layer {
+        @include qodefAbsoluteLayout();
+        transform: translateY(0);
+        opacity: 1;
+        transition: transform 1.02s ease, opacity .88s .44s;
+
+        &.qodef-hide {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        &--bottom {
+            z-index: 1;
+
+            .qodef-m-image {
+
+                &:nth-child(1) {
+                    top: 10.5vmin;
+                    left: 8vmin;
+                }
+
+                &:nth-child(2) {
+                    top: 16.4vmin;
+                    left: 78vmin;
+                }
+
+                &:nth-child(3) {
+                    top: 7.5vmin;
+                    right: 18vmin;
+                }
+
+                &:nth-child(4) {
+                    bottom: 0;
+                    left: 13.9vmin;
+                }
+
+                &:nth-child(5) {
+                    bottom: 5.3vmin;
+                    right: 83.5vmin;
+                }
+
+                &:nth-child(6) {
+                    bottom: 1.6vmin;
+                    right: 5.3vmin;
+                }
+            }
+        }
+
+        &--top {
+            z-index: 2;
+            transition: transform 1.32s, opacity .88s .64s;
+
+            .qodef-m-image {
+
+                &:nth-child(1) {
+                    top: 31.5vmin;
+                    left: 22.5vmin;
+                }
+
+                &:nth-child(2) {
+                    top: 4.9vmin;
+                    left: 65.1vmin;
+                }
+
+                &:nth-child(3) {
+                    top: 13.2vmin;
+                    right: 64.4vmin;
+                }
+
+                &:nth-child(4) {
+                    top: 40.2vmin;
+                    right: 51.7vmin;
+                }
+
+                &:nth-child(5) {
+                    bottom: 16.5vmin;
+                    left: 43.1vmin;
+                }
+
+                &:nth-child(6) {
+                    bottom: 0;
+                    right: 59.6vmin;
+                }
+
+                &:nth-child(7) {
+                    bottom: 10.5vmin;
+                    right: 23.5vmin;
+                }
+            }
+        }
+    }
+
+    .qodef-m-image {
+        position: absolute;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+        opacity: 0;
+        transform: translateY(132px);
+        will-change: transform;
+        transform-origin: center center;
+        transition: transform 1.02s cubic-bezier(.35, .18, .07, 1.04);
+
+        &.qodef-active {
+            transform: translateY(0);
+        }
+    }
+
+    .qodef-m-title-holder {
+        @include qodefAbsoluteLayout();
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity .88s ease .2s;
+
+        &.qodef-hide {
+            opacity: 0;
+        }
+    }
+
+    .qodef-m-title-part {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(32px);
+        transition: transform .72s ease, opacity .72s ease;
+        will-change: transform;
+
+        &.qodef-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* ==========================================================================
+   Scattered Images With Title shortcode style - end
+   ========================================================================== */

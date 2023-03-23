@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-post-navigation {
+	@include qodefRelativeLayout();
+	margin: 95px 0 0;
+
+	@include qodefScreenSize1024 {
+		margin: 65px 0 58px;
+	}
+	@include qodefScreenSize480 {
+		margin: 66px 0 60px;
+	}
+
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+
+		&:hover {
+			.qodef-m-nav-info {
+
+				.qodef-m-nav-title,
+				.qodef-m-nav-label {
+
+					&:after {
+						width: 0;
+					}
+				}
+			}
+		}
+
+		&.qodef--next {
+			.qodef-m-nav-image {
+				margin-left: 18px;
+			}
+
+
+		}
+
+		&.qodef--prev {
+			.qodef-m-nav-image {
+				margin-right: 18px;
+			}
+		}
+
+		.qodef-m-nav-image {
+			max-width: 133px;
+			position: relative;
+			overflow: hidden;
+
+			@include qodefScreenSize480 {
+				max-width: 60px;
+			}
+		}
+
+		.qodef-m-nav-info {
+			.qodef-m-nav-title,
+			.qodef-m-nav-label {
+				position: relative;
+				font-family: $text-font;
+				font-size: 14px;
+				font-weight: 400;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: $heading-color;
+
+				&:after {
+					content: '';
+					position: absolute;
+					height: 1px;
+					width: 100%;
+					background-color: $heading-color;
+					left: 0;
+					bottom: 0;
+					transition: width 0.3s ease-in-out;
+				}
+
+			}
+		}
+
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+
+		.qodef-m-pagination-icon {
+			position: relative;
+			top: -2px;
+			display: block;
+			width: 30px;
+			height: auto;
+			fill: currentColor;
+			stroke: none;
+		}
+
+		&.qodef--prev {
+			left: 0;
+
+			.qodef-m-pagination-icon {
+				margin-right: 4px;
+			}
+		}
+
+		&.qodef--next {
+			flex-direction: row-reverse;
+			right: 0;
+			margin-left: auto;
+			text-align: right;
+
+			.qodef-m-pagination-icon {
+				margin-left: 4px;
+			}
+		}
+	}
+}

@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Full Screen Menu Opener styles
+   ========================================================================== */
+
+.qodef-fullscreen-menu-opener {
+	margin-left: 20px;
+
+	&:hover {
+		color: $heading-color;
+	}
+}
+
+.qodef-fullscreen-menu--opened {
+
+	&.qodef-sp-opened {
+
+		.qodef-sp-holder {
+			opacity: 0 !important;
+		}
+	}
+
+	.qodef-opener-icon .qodef-m-icon.qodef--open {
+		visibility: hidden !important;
+
+		* {
+			visibility: hidden !important;
+		}
+	}
+
+	&.qodef-header--vertical-sliding {
+
+		.qodef-opener-icon .qodef-m-icon.qodef--open {
+
+			* {
+				visibility: visible !important;
+			}
+		}
+
+
+	}
+
+	.qodef-opener-icon .qodef-m-icon.qodef--close {
+		left: 0;
+
+		.qodef-m-line {
+			color: #fff !important;
+		}
+
+	}
+
+	.qodef-fullscreen-menu-opener {
+		color: #fff;
+
+		&:hover {
+			color: #fff;
+
+			.qodef-m-line {
+				animation: qodef-predefined-line-animation .88s forwards cubic-bezier(0.48, 0.03, 0.24, 0.92);
+
+				&.qodef--3 {
+					animation-delay: .16s !important;
+				}
+			}
+		}
+	}
+
+	#qodef-page-header,
+	#qodef-page-mobile-header {
+		visibility: hidden;
+
+		* {
+			visibility: hidden;
+		}
+	}
+
+	.qodef-header-logo-link,
+	.qodef-mobile-header-logo-link,
+	.qodef-header-logo-image.qodef--customizer,
+	.qodef-fullscreen-menu-opener {
+		visibility: visible;
+
+		* {
+			visibility: visible !important;
+		}
+	}
+
+	#qodef-page-header .qodef-header-logo-link img {
+
+		&.qodef--light {
+			opacity: 1;
+		}
+
+		&.qodef--main,
+		&.qodef--dark {
+			opacity: 0;
+		}
+	}
+
+	&.qodef-fullscreen-menu--hide-logo {
+
+		.qodef-header-logo-link,
+		.qodef-mobile-header-logo-link,
+		.qodef-header-logo-image.qodef--customizer {
+			visibility: hidden;
+		}
+	}
+}

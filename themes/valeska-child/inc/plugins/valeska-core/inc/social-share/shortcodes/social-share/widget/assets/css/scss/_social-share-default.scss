@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Social Share widget styles
+   ========================================================================== */
+
+$wp-widgets-area-map: (
+	'#qodef-page-sidebar': (
+		text-color: null
+	),
+	'#qodef-page-footer': (
+		text-color: #ccc
+	),
+	'#qodef-side-area': (
+		text-color: #ccc
+	)
+);
+.qodef-social-share {
+	
+	.widget & {
+		&.qodef-layout--list {
+			.qodef-social-title {
+				display: block;
+				margin-bottom: 21px;
+			}
+		}
+		
+		&.qodef-layout--text {
+			.qodef-social-title {
+				display: block;
+				margin-bottom: 21px;
+			}
+		}
+	}
+	
+	@each $key, $values in $wp-widgets-area-map {
+		#{$key} .widget & {
+			&.qodef-layout--dropdown {
+				.qodef-social-title {
+					color: map-get($values, 'text-color');
+				}
+			}
+			&.qodef-layout--list {
+				.qodef-social-title {
+					color: map-get($values, 'text-color');
+				}
+				li {
+					&.qodef-facebook-share a:hover {
+						color: var(--qode-main-color);;
+					}
+					
+					&.qodef-twitter-share a:hover {
+						color: var(--qode-main-color);
+					}
+					
+					&.qodef-linkedin-share a:hover {
+						color: var(--qode-main-color);
+					}
+					
+					&.qodef-tumblr-share a:hover {
+						color: var(--qode-main-color);
+					}
+					
+					&.qodef-pinterest-share a:hover {
+						color: var(--qode-main-color);
+					}
+					
+					&.qodef-vk-share a:hover {
+						color: var(--qode-main-color);
+					}
+				}
+			}
+			&.qodef-layout--text {
+				.qodef-social-title {
+					color: map-get($values, 'text-color');
+				}
+				li {
+					&.qodef-facebook-share a:hover {
+						color: var(--qode-main-color);
+					}
+					
+					&.qodef-twitter-share a:hover {
+						color: var(--qode-main-color);
+					}
+					
+					&.qodef-linkedin-share a:hover {
+						color: var(--qode-main-color);
+					}
+					
+					&.qodef-tumblr-share a:hover {
+						color: var(--qode-main-color);
+					}
+					
+					&.qodef-pinterest-share a:hover {
+						color: var(--qode-main-color);
+					}
+					
+					&.qodef-vk-share a:hover {
+						color: var(--qode-main-color);
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Social Share widget styles
+   ========================================================================== */

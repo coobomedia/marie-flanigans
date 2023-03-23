@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Accordion shortcode styles
+   ========================================================================== */
+
+.qodef-accordion.qodef-layout--simple {
+
+	.qodef-accordion-title {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 12px 0 0;
+		padding: 47px 0px 27px 0px;
+		border-top: 1px solid $additional-background-color;
+		transition: color .2s ease-out, background-color .2s ease-out;
+		cursor: pointer;
+
+		&:first-child {
+			margin-top: 0;
+			border-top: 1px solid transparent;
+		}
+
+
+		.qodef-accordion-mark {
+			position: relative;
+			flex-shrink: 0;
+			width: 35px;
+			height: 35px;
+			line-height: 18px;
+			text-align: center;
+
+			svg {
+				fill: #555;
+			}
+
+			span {
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				transition: opacity .2s ease-out;
+
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+
+				&.qodef-icon--minus {
+					opacity: 0;
+				}
+
+				&.qodef-icon--plus {
+					opacity: 1;
+				}
+			}
+		}
+
+		&.ui-state-active,
+		&.ui-state-hover {
+
+			.qodef-accordion-mark {
+
+				span {
+
+					&.qodef-icon--minus {
+						opacity: 1;
+					}
+
+					&.qodef-icon--plus {
+						opacity: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.qodef-accordion-content {
+		padding: 0 81px 34px 81px;
+		margin: 0;
+
+		@media (min-width: 1280px) and (max-width: 1440px) {
+			padding: 0 0 34px 81px;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		@include qodefScreenSize480 {
+			padding: 0 0 34px 81px;
+		}
+	}
+
+	&.qodef-behavior--toggle {
+
+		.qodef-accordion-content {
+			display: none;
+		}
+	}
+}

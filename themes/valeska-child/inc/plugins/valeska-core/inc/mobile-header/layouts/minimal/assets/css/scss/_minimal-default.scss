@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Mobile header layout styles
+   ========================================================================== */
+
+.qodef-mobile-header--minimal #qodef-page-mobile-header-inner {
+	justify-content: flex-end;
+	
+	.qodef-mobile-header-logo-link {
+		margin-right: auto;
+	}
+	
+	.qodef-opener-icon {
+		margin-left: 34px;
+	}
+}
+
+.qodef-fullscreen-menu--opened {
+    overflow-y: hidden;
+	
+	#qodef-page-mobile-header .qodef-mobile-header-logo-link {
+
+		img {
+
+			&.qodef--light {
+				opacity: 1;
+			}
+
+			&.qodef--main,
+			&.qodef--dark {
+				opacity: 0;
+			}
+		}
+
+		&.qodef-source--svg-path,
+		&.qodef-source--textual {
+			color: var(--qode-header-light-color) !important;
+
+			&:hover {
+				color: var(--qode-header-light-hover-color) !important;
+			}
+		}
+	}
+}

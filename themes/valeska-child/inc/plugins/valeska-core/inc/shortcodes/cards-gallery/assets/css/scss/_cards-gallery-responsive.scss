@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Cards Gallery shortcode responsive style - begin
+   ========================================================================== */
+
+@include qodefScreenSize768 {
+	
+	.qodef-cards-gallery {
+		
+		.qodef-m-fake-card {
+			transform: scale(.8);
+		}
+		
+		&.qodef-orientation--left .qodef-m-card {
+			transform: scale(.8);
+			
+			&.qodef-out {
+				transform: translateX(-100%);
+			}
+			
+			&:nth-last-child(6) {
+				transform: scale(.3) translateX(84%);
+			}
+			
+			&:nth-last-child(5) {
+				transform: scale(.4) translateX(60%);
+			}
+			
+			&:nth-last-child(4) {
+				transform: scale(.5) translateX(39%);
+			}
+			
+			&:nth-last-child(3) {
+				transform: scale(.6) translateX(25%);
+			}
+			
+			&:nth-last-child(2) {
+				transform: scale(.7) translateX(11.2%);
+			}
+		}
+		
+		&.qodef-orientation--right .qodef-m-card {
+			transform: scale(.8);
+			
+			&.qodef-out {
+				transform: translateX(100%);
+			}
+			
+			&:nth-last-child(6) {
+				transform: scale(.3) translateX(-84%);
+			}
+			
+			&:nth-last-child(5) {
+				transform: scale(.4) translateX(-60%);
+			}
+			
+			&:nth-last-child(4) {
+				transform: scale(.5) translateX(-39%);
+			}
+			
+			&:nth-last-child(3) {
+				transform: scale(.6) translateX(-25%);
+			}
+			
+			&:nth-last-child(2) {
+				transform: scale(.7) translateX(-11.2%);
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Cards Gallery shortcode responsive style - end
+   ========================================================================== */

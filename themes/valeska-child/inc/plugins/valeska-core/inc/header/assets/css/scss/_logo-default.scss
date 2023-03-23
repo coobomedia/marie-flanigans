@@ -1,0 +1,101 @@
+/* ==========================================================================
+# Logo default style
+========================================================================== */
+
+#qodef-page-header {
+
+    .qodef-header-logo-link {
+
+        img {
+
+            &.qodef--main {
+                opacity: 1;
+            }
+    
+            &.qodef--dark,
+            &.qodef--light {
+                opacity: 0;
+            }
+    
+            &:not(.qodef--main) {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+        }
+
+        &.qodef-source--svg-path {
+
+            svg {
+                display: block;
+                width: 50px;
+                height: auto;
+                fill: currentColor;
+                stroke: currentColor;
+            }
+        }
+
+        &.qodef-source--textual {
+            @include qodefHeadingStyle(h4);
+            transition: $color-transition;
+        }
+    }
+}
+
+#qodef-page-header-inner {
+    
+    &.qodef-skin--light {
+    
+        .qodef-header-logo-link {
+        
+            img {
+    
+                &.qodef--dark,
+                &.qodef--main {
+                    opacity: 0;
+                }
+    
+                &.qodef--light {
+                    opacity: 1;
+                }
+            }
+
+            &.qodef-source--svg-path,
+            &.qodef-source--textual {
+                color: var(--qode-header-light-color) !important;
+
+                &:hover {
+                    color: var(--qode-header-light-hover-color) !important;
+                }
+            }
+        }
+    }
+    
+    &.qodef-skin--dark {
+    
+        .qodef-header-logo-link {
+        
+            img {
+            
+                &.qodef--light,
+                &.qodef--main {
+                    opacity: 0;
+                }
+            
+                &.qodef--dark {
+                    opacity: 1;
+                }
+            }
+
+            &.qodef-source--svg-path,
+            &.qodef-source--textual {
+                color: var(--qode-header-dark-color) !important;
+
+                &:hover {
+                    color: var(--qode-header-dark-hover-color) !important;
+                }
+            }
+        }
+    }
+}

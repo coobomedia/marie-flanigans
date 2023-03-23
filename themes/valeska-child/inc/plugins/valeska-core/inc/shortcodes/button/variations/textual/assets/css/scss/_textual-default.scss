@@ -1,0 +1,10 @@
+.qodef-button {
+
+	&.qodef-layout--textual {
+		@include qodefButtonTextualColor();
+
+		&:hover {
+			@include qodefButtonTextualHoverColor();
+		}
+	}
+}
